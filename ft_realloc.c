@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:36:41 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/12 16:36:41 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/12 23:01:26 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/12 23:20:25 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_realloc(void *ptr, size_t size)
 {
-	size_t i;
-	char *pd;
-	char *ps;
-
-	pd = (char*)dst;
-	ps = (char*)src;
-	i = 0;
-	while (i < n)
+	if (!ptr)
+		return (malloc(size));
+	else if (size == 0)
 	{
-		pd[i] = ps[i];
-		i++;
+		free(ptr);
+		return (malloc(sizeof(char)));
 	}
-	return (dst);
+
 }

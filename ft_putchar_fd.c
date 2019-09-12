@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:36:41 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/12 16:36:41 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/12 18:37:54 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/12 20:54:56 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	ft_putchar_fd(char c, int fd)
 {
-	size_t i;
-	char *pd;
-	char *ps;
+	unsigned char c1;
+	unsigned char c2;
+	unsigned char mask;
 
-	pd = (char*)dst;
-	ps = (char*)src;
-	i = 0;
-	while (i < n)
+	mask = (unsigned char)192;
+	if (c >= 0)
+		write(fd, &c, 1);
+	else
 	{
-		pd[i] = ps[i];
-		i++;
+		c1 = mask | ((unsigned char)c >> 6u);
+		c2 = (FT_CHAR_MAX) | (((unsigned char)c << 2u) >> 2u);
+
+		write(fd, &c1, 1);
+		write(fd, &c2, 1);
 	}
-	return (dst);
 }

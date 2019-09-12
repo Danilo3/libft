@@ -1,20 +1,20 @@
-name 	        part 	order	done  tested    uses
+name 	        part 	    order	done    tested  uses            problem
 
-ft_ischar       Expansion	1   +       -       logical op
-ft_isdigit	    Part1	    1   +       -       logical op
-ft_islower	    Expansion	1   +       -       logical op
-ft_isspace	    Expansion	1   +	    -       logical op
-ft_isupper	    Expansion	1   +       -       logical op
-ft_strrev 	    My          1   +       +       ft_strlen
-ft_itostr	    Expansion	1   +       +       ft_strrev
-ft_memcmp	    Part1	    1   +       +       logical op
-ft_memcpy	    Part1	    1   +       -       logical op
-ft_memset	    Part1	    1   +       +
-ft_putchar_fd	Part2       1
+ft_ischar       Expansion	1       +       -       logical op
+ft_isdigit	    Part1	    1       +       -       logical op
+ft_islower	    Expansion	1       +       -       logical op
+ft_isspace	    Expansion	1       +	    -       logical op
+ft_isupper	    Expansion	1       +       -       logical op
+ft_strrev 	    My          1       +       +       ft_strlen
+ft_itostr	    Expansion	1       +       +       ft_strrev
+ft_memcmp	    Part1	    1       +       +       logical op
+ft_memcpy	    Part1	    1       +       -       logical op
+ft_memset	    Part1	    1       +       +
+ft_putchar_fd	Part2       1       +       -       logical op          unicode
 ft_realloc	    Expansion	1
 ft_striter	    Part2	    1
 ft_strmap	    Part2	    1
-ft_strnlen	    Expansion	1	 +		-
+ft_strnlen	    Expansion	1	    +		-
 ft_bzero	    Part1		2
 ft_atoi	        Part1	    2
 ft_isalpha	    Part1		2

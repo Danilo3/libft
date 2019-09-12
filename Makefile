@@ -6,7 +6,7 @@
 #    By: ayellin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/11 14:52:30 by ayellin           #+#    #+#              #
-#    Updated: 2019/09/12 16:49:54 by ayellin          ###   ########.fr        #
+#    Updated: 2019/09/12 18:43:43 by ayellin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@
 
 NAME	:= libft.a
 
-SRC		:= ft_strlen.c ft_strrev.c ft_itostr.c ft_memcmp.c ft_memcpy.c ft_memset.c
+SRC		:= ft_strlen.c ft_strrev.c ft_itostr.c ft_memcmp.c ft_memcpy.c ft_memset.c ft_putchar_fd.c
 
-OBJ		:= ft_strlen.o ft_strrev.o ft_itostr.o ft_memcmp.o ft_memcpy.o ft_memset.o
+OBJ		:= ft_strlen.o ft_strrev.o ft_itostr.o ft_memcmp.o ft_memcpy.o ft_memset.o ft_putchar_fd.o
 
 CC		:= gcc
 
@@ -48,7 +48,7 @@ test: $(NAME) $(TEST)
 clean_test: fclean
 	rm -f test
 
-move: $(NAME) $(SRC) libft.h
+move: $(NAME) $(SRC) libft.h clean
 	cp $(NAME) $(CHECKER_DIR)
 	cp $(SRC)  $(CHECKER_DIR)
 	cp libft.h $(CHECKER_DIR)

@@ -16,7 +16,7 @@
  * *  Accepts an integer value and a pointer to a string. Converts an integer to a string.
  */
 
-//TODO: MIN and MAX INT
+//TODO: INT_MAX
 void ft_itostr(int value, char *str)
 {
 	int is_int_min;
@@ -48,5 +48,4 @@ void ft_itostr(int value, char *str)
 		str[0] = '8';
 	str[i] = '\0';
 	ft_strrev(str);
-
 }

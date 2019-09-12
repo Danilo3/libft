@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   test_ft_putchar_fd.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 16:36:41 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/12 16:36:41 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/12 18:38:26 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/12 20:41:34 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "minunit.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+static char *simple_test()
 {
-	size_t i;
-	char *pd;
-	char *ps;
+	ft_putchar_fd(-94, 1); // 162
+	ft_putchar_fd('\n', 1);
+	return (0);
+}
 
-	pd = (char*)dst;
-	ps = (char*)src;
-	i = 0;
-	while (i < n)
-	{
-		pd[i] = ps[i];
-		i++;
-	}
-	return (dst);
+int	main()
+{
+	test_all("FT_PUTCHAR_FD", 1, simple_test);
+	return (0);
 }
