@@ -3,36 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itostr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 20:31:14 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/04 21:12:44 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/11 16:51:32 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/12 14:14:05 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#define INT_MIN -2147483648
-#define INT_MAX  2147483647
+#include "libft.h"
 
-void ft_itostr(char *str, int value)
+/*
+ * *  Accepts an integer value and a pointer to a string. Converts an integer to a string.
+ */
+
+//TODO: MIN and MAX INT
+void ft_itostr(int value, char *str)
 {
-	int ndigits;
-	int is_min_int;
-	int sign;
-	int i;
+	int is_int_min;
+	int is_neg;
+	size_t i;
 
 	i = 0;
-	sign = 0;
-	is_min_int = 0;
-	ndigits = 0;
-	if (value <= 0)
+	is_neg = 0;
+	is_int_min = 0;
+	if (value < 0)
 	{
-		sign = 1; //str[i++] = '-';
-		if (value == INT_MIN)
+		is_neg = 1;
+		if (value == FT_INT_MIN)
 		{
-			str[i++] = '8';
-			value += 1;
+			value = FT_INT_MAX;
+			is_int_min = 1;
 		}
-		value = -value;
+		if (!is_int_min)
+			value = -value;
 	}
-	
+	while (value)
+	{
+		str[i++] = (char)((value % 10) + '0');
+		value /= 10;
+	}
+	if (is_neg)
+		str[i++] = '-';
+	if (is_int_min)
+		str[0] = '8';
+	str[i] = '\0';
+	ft_strrev(str);
+
 }

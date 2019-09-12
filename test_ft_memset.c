@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   test_ft_memset.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/11 13:44:35 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/11 14:46:48 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/12 16:18:02 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/12 16:28:27 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "minunit.h"
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+static char	*test_simple()
 {
-	size_t l;
+	char dest[11];
+	char c;
 
-	l = 0;
-	while (*str)
-	{
-		l++;
-		str++;
-	}
-	return (l);
+	c = 'a';
+	ft_memset(dest, c, 10);
+	mu_assert_str("dest != \"aaaaaaaaaa\"", dest, "aaaaaaaaaa");
+	return (0);
+}
+
+int main()
+{
+	test_all("FT_MEMSET", 1, test_simple);
+	return (0);
 }

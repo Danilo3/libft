@@ -1,41 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrev.c                                        :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 21:13:59 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/11 16:28:23 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/12 14:26:12 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/12 14:58:28 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void ft_ch_swap(char *a, char *b)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char tmp;
+	size_t			i;
+	unsigned char	v1;
+	unsigned char	v2;
+	char			*p1;
+	char			*p2;
 
-	tmp = *a;
-	*a = *b;
-	*b = tmp;
-}
-
-char *ft_strrev(char *str)
-{
-	size_t i;
-	size_t j;
-
-	i = 0;
-	j = ft_strlen(str);
-	if (j != 0)
-		j--;
-	while (i < j)
+	i = 0l;
+	p1 = (char *)s1;
+	p2 = (char *)s2;
+	while (i < n)
 	{
-		ft_ch_swap(str + i, str + j);
-		j--;
+		v1 = p1[i];
+		v2 = p2[i];
+		if (v1 != v2)
+			return (v1 - v2);
 		i++;
 	}
-	return (str);
+	return (0);
 }
 
