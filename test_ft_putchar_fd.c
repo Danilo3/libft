@@ -15,7 +15,7 @@
 
 static char *simple_test()
 {
-	ft_putchar_fd(-94, 1); // 162
+	ft_putchar_fd(255, 1); // 162
 	ft_putchar_fd('\n', 1);
 	return (0);
 }

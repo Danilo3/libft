@@ -33,7 +33,8 @@ void	*ft_memset(void *b, int c, size_t len);
  ** Part 2
  */
 void	ft_putchar_fd(char c, int fd);
-
+void    ft_striter(char *s, void(*f)(char *));
+char    *ft_strmap(char const *s, char (*f)(char));
 /*
  ** My
  */

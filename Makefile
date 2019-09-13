@@ -15,6 +15,8 @@
 
 NAME	:= libft.a
 
+SO_NAME := libft.so
+
 SRC		:= ft_strlen.c ft_strrev.c ft_itostr.c ft_memcmp.c ft_memcpy.c ft_memset.c ft_putchar_fd.c
 
 OBJ		:= ft_strlen.o ft_strrev.o ft_itostr.o ft_memcmp.o ft_memcpy.o ft_memset.o ft_putchar_fd.o
@@ -35,11 +37,16 @@ $(NAME): $(OBJ)
 $(OBJ): $(SRC)
 		$(CC) $(CFLAGS) -c $(SRC)
 
+so:  $(SRC)
+	$(CC) $(CFLAGS) -fPIC -c $(SRC)
+	$(CC) -shared -Wl,-soname,$(SO_NAME) -o $(SO_NAME) $(OBJ)
+
 clean:
 	@rm -f $(OBJ)
 
 fclean: clean
 	rm -f $(NAME)
+	rm -f $(SO_NAME)
 
 test: $(NAME) $(TEST)
 	$(CC) $(CFLAGS) $(TEST) -o test  -L. -lft

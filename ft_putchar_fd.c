@@ -13,6 +13,7 @@
 #include <unistd.h>
 #include "libft.h"
 
+//TODO: int c
 void	ft_putchar_fd(char c, int fd)
 {
 	unsigned char c1;
@@ -25,7 +26,7 @@ void	ft_putchar_fd(char c, int fd)
 	else
 	{
 		c1 = mask | ((unsigned char)c >> 6u);
-		c2 = (FT_CHAR_MAX) | (((unsigned char)c << 2u) >> 2u);
+		c2 = (unsigned char)(FT_CHAR_MAX) | (((unsigned char)c << 2u) >> 2u);
 
 		write(fd, &c1, 1);
 		write(fd, &c2, 1);
