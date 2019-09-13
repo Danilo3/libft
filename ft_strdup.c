@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 22:30:57 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/13 22:30:57 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/04 03:00:59 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/14 01:25:22 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-int ft_isalpha(int c)
+char	*ft_strdup(const char *src)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	char	*dup;
+	int		size;
+
+	size = ft_strlen(src);
+	dup = (char*)malloc((1 + size) * sizeof(char));
+	if (!dup)
+		return (NULL);
+	ft_strcpy(dup, src);
+	return (dup);
 }

@@ -6,14 +6,13 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/12 18:37:54 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/12 20:54:56 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/13 21:54:19 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "libft.h"
 
-//TODO: int c
 void	ft_putchar_fd(char c, int fd)
 {
 	unsigned char c1;
@@ -26,7 +25,7 @@ void	ft_putchar_fd(char c, int fd)
 	else
 	{
 		c1 = mask | ((unsigned char)c >> 6u);
-		c2 = (unsigned char)(FT_CHAR_MAX) | (((unsigned char)c << 2u) >> 2u);
+		c2 = (FT_CHAR_MAX) | (((unsigned char)c << 2u) >> 2u);
 
 		write(fd, &c1, 1);
 		write(fd, &c2, 1);

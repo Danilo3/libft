@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 22:30:57 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/13 22:30:57 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/14 01:27:55 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/14 01:54:49 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isalpha(int c)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	return (ft_isupper(c) || ft_islower(c));
+	while (*src)
+	{
+		*dst = *src;
+		dst++;
+		src++;
+	}
+	while (len)
+	{
+		*dst = '\0';
+		len--;
+	}
+	return (dst);
 }

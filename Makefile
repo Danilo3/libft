@@ -6,7 +6,7 @@
 #    By: ayellin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/11 14:52:30 by ayellin           #+#    #+#              #
-#    Updated: 2019/09/12 18:43:43 by ayellin          ###   ########.fr        #
+#    Updated: 2019/09/14 01:23:40 by ayellin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,17 @@ NAME	:= libft.a
 
 SO_NAME := libft.so
 
-SRC		:= ft_strlen.c ft_strrev.c ft_itostr.c ft_memcmp.c ft_memcpy.c ft_memset.c ft_putchar_fd.c
+SRC		:= ft_strlen.c ft_strrev.c ft_itostr.c ft_memcmp.c ft_memcpy.c ft_memset.c \
+		ft_putchar_fd.c ft_islower.c ft_isupper.c ft_isalpha.c ft_bzero.c ft_isascii.c \
+		ft_lstnew.c ft_atoi.c ft_toupper.c ft_tolower.c ft_isspace.c ft_isdigit.c \
+		ft_isprint.c ft_isalnum.c ft_memccpy.c ft_memmove.c ft_memrcpy.c ft_memchr.c \
+		ft_strdup.c ft_strcpy.c ft_strncpy.c
 
-OBJ		:= ft_strlen.o ft_strrev.o ft_itostr.o ft_memcmp.o ft_memcpy.o ft_memset.o ft_putchar_fd.o
-
+OBJ		:= ft_strlen.o ft_strrev.o ft_itostr.o ft_memcmp.o ft_memcpy.o ft_memset.o \
+		ft_putchar_fd.o ft_islower.o ft_isupper.o ft_isalpha.o ft_bzero.o ft_isascii.o \
+		ft_lstnew.o ft_atoi.o ft_toupper.o ft_tolower.o ft_isspace.o ft_isdigit.o \
+		ft_isprint.o ft_isalnum.o ft_memccpy.o ft_memmove.o ft_memrcpy.o ft_memchr.o\
+		ft_strdup.o ft_strcpy.o ft_strncpy.o
 CC		:= gcc
 
 CFLAGS	:= -Werror -Wextra -Wall
