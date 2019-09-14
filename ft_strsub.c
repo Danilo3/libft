@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 13:33:56 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 13:36:03 by dan              ###   ########.fr       */
+/*   Created: 2019/09/14 14:10:53 by dan               #+#    #+#             */
+/*   Updated: 2019/09/14 14:12:31 by dan              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_strsub(char	const *s, unsigned int start, size_t len)
 {
-	char	*new;
-	size_t  i;
-
-	i = 0;
-	new = ft_strnew(ft_strlen(s));
+	char *new;
+	new = ft_strnew(len);
 	if (!new)
-		return (NULL);
-	while(s[i])
-	{
-		new[i] = f(s[i]);
-		i++;
-	}
+		return (FT_NULL);
+	ft_strncpy(new, s + start, len);
 	return (new);
 }

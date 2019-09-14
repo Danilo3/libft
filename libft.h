@@ -6,7 +6,7 @@
 /*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:46:58 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 04:58:26 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/14 16:00:40 by dan              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,16 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strrchr(const char *s, int c);
 char 	*ft_strstr(const char *haystack, const char *needle);
 char 	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+
 /*
  ** Part 2
  */
 void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char const *s, int fd);
+void	ft_putendl_fd(char const *s, int fd);
+void	ft_putendl(char const *s);
+void	ft_putchar(char c);
+void	ft_putstr(char const *s);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
 char 	*ft_strnew(size_t size);
@@ -67,6 +73,13 @@ void	ft_strdel(char **as);
 void	ft_strclr(char *s);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char 	*ft_strmap(char const *s, char (*f)(char));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+int		ft_strequ(char const *s1, char const *s2);
+int		ft_strnequ(char const *s1, char const *s2, size_t n);
+char	*ft_strsub(char const *s, unsigned int start, size_t len);
+char 	*ft_strjoin(char const *s1, char const *s2);
+char 	*ft_itoa(int n);
 
 /*
  **	Bonus
@@ -91,6 +104,8 @@ int		ft_islower(int c);
 int		ft_isupper(int c);
 int 	ft_strstartswtih(const char *str, const char *begin);
 int		ft_strnstartswith(const char *str, const char *begin, size_t n);
+int		ft_count_digits(int n);
+
 /*
  * Expansion
  */
@@ -98,5 +113,6 @@ void	ft_itostr(int value, char *str);
 void	ft_realloc(void *ptr, size_t size);
 void	ft_memjoin(void *s1, void *s2, size_t n1, size_t n2);
 void	*ft_memrcpy(void *dst, const void *src, size_t len);
+double	ft_power(double base, int n);
 
 #endif

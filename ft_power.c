@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_power.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 13:33:56 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 13:36:03 by dan              ###   ########.fr       */
+/*   Created: 2019/09/14 14:00:38 by dan               #+#    #+#             */
+/*   Updated: 2019/09/14 14:01:09 by dan              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strmap(char const *s, char (*f)(char))
+double ft_power(double base, int n)
 {
-	char	*new;
-	size_t  i;
+	double temp;
 
-	i = 0;
-	new = ft_strnew(ft_strlen(s));
-	if (!new)
-		return (NULL);
-	while(s[i])
-	{
-		new[i] = f(s[i]);
-		i++;
-	}
-	return (new);
+	if (n == 0)
+		return (1);
+	temp = ft_power(base, n / 2);
+	if ((n % 2) == 0)
+		return (temp * temp);
+	else if (n > 0)
+			return (n * temp * temp);
+		else
+			return ((temp * temp) / base);
 }

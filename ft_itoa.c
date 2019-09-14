@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 13:33:56 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 13:36:03 by dan              ###   ########.fr       */
+/*   Created: 2019/09/14 15:39:47 by dan               #+#    #+#             */
+/*   Updated: 2019/09/14 15:39:47 by dan              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strmap(char const *s, char (*f)(char))
+char	*ft_itoa(int n)
 {
-	char	*new;
-	size_t  i;
+	int size;
+	char *number;
 
-	i = 0;
-	new = ft_strnew(ft_strlen(s));
-	if (!new)
-		return (NULL);
-	while(s[i])
-	{
-		new[i] = f(s[i]);
-		i++;
-	}
-	return (new);
+	size = ft_count_digits(n);
+	if (n < 0)
+		size++;
+	number = ft_strnew(size);
+	if(!number)
+		return (FT_NULL);
+	ft_itostr(n, number);
+	return (number);
+
 }
+

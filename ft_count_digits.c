@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmap.c                                        :+:      :+:    :+:   */
+/*   ft_count_digits.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 13:33:56 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 13:36:03 by dan              ###   ########.fr       */
+/*   Created: 2019/09/14 15:38:09 by dan               #+#    #+#             */
+/*   Updated: 2019/09/14 15:38:09 by dan              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strmap(char const *s, char (*f)(char))
+int	ft_count_digits(int n)
 {
-	char	*new;
-	size_t  i;
+	int count;
 
-	i = 0;
-	new = ft_strnew(ft_strlen(s));
-	if (!new)
-		return (NULL);
-	while(s[i])
+	count = 0;
+	while (n)
 	{
-		new[i] = f(s[i]);
-		i++;
+		count ++;
+		n /= 10;
 	}
-	return (new);
+	return (count);
 }
