@@ -6,7 +6,7 @@
 /*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:46:58 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 01:23:06 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/14 03:42:39 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@
 #define FT_CHAR_MAX 128
 #define FT_NULL ((void*)0)
 
+#define MIN(x, y) ((x) < (y) ? (x) : (y))
+#define MAX(x, y) ((x) > (y) ? (x) : (y))
 
 typedef unsigned char t_uchar;
 
@@ -45,10 +47,21 @@ int		ft_toupper(int c);
 char	*ft_strcpy(char *dest, const char *str);
 char 	*ft_strdup(const char *str);
 char	*ft_strncpy(char *det, const char *src, size_t len);
+char 	*ft_strcat(char *s1, char *s2);
+char	*ft_strncat(char *s1, char *s2, size_t n);
+size_t	ft_strlcat(char *s1, const char *s2, size_t size);
+int		ft_strcmp(const char *s1, const char *s2);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
+char 	*ft_strstr(const char *haystack, const char *needle);
+char 	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 /*
  ** Part 2
  */
 void	ft_putchar_fd(char c, int fd);
+void	*ft_memalloc(size_t size);
+void	ft_memdel(void **ap);
 
 /*
  **	Bonus

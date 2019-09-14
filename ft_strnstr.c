@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 01:27:55 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 01:54:49 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/14 03:48:57 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/14 03:56:37 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, const char *src, size_t len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
 {
 	size_t i;
 
 	i = 0;
-	while (i < len)
+	if (needle[0] == '\0')
+		return (char*)(haystack);
+	while (haystack[i])
 	{
-		if (src[i])
-			dst[i] = src[i];
-		else
-			while (i < len)
-				dst[i++] = '\0';
+		if (ft_strncmp(haystack + i, needle, n) == 0)
+			return (char*)(haystack + i);
 		i++;
 	}
-	return (dst);
+	return (FT_NULL);
 }
+
