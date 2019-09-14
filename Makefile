@@ -6,7 +6,7 @@
 #    By: ayellin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/11 14:52:30 by ayellin           #+#    #+#              #
-#    Updated: 2019/09/14 03:42:37 by ayellin          ###   ########.fr        #
+#    Updated: 2019/09/14 04:58:26 by ayellin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC		:= ft_strlen.c ft_strrev.c ft_itostr.c ft_memcmp.c ft_memcpy.c ft_memset.c 
 		ft_isprint.c ft_isalnum.c ft_memccpy.c ft_memmove.c ft_memrcpy.c ft_memchr.c \
 		ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c ft_strlcat.c \
 		ft_strcmp.c ft_strncmp.c ft_memalloc.c ft_memdel.c ft_strchr.c ft_strrchr.c \
-		ft_strstr.c ft_strnstr.c
+		ft_strstr.c ft_strnstr.c ft_strnstartswith.c ft_strstartswith.c ft_strnew.c \
+		ft_strdel.c ft_strclr.c ft_striter.c
 
 OBJ		:= ft_strlen.o ft_strrev.o ft_itostr.o ft_memcmp.o ft_memcpy.o ft_memset.o \
 		ft_putchar_fd.o ft_islower.o ft_isupper.o ft_isalpha.o ft_bzero.o ft_isascii.o \
@@ -31,7 +32,8 @@ OBJ		:= ft_strlen.o ft_strrev.o ft_itostr.o ft_memcmp.o ft_memcpy.o ft_memset.o 
 		ft_isprint.o ft_isalnum.o ft_memccpy.o ft_memmove.o ft_memrcpy.o ft_memchr.o\
 		ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o ft_strncat.o ft_strlcat.o \
 		ft_strcmp.o ft_strncmp.o ft_memalloc.o ft_memdel.o ft_strchr.o ft_strrchr.o \
-		ft_strstr.o ft_strnstr.o
+		ft_strstr.o ft_strnstr.o ft_strnstartswith.o ft_strstartswith.o	ft_strnew.o \
+		ft_strdel.o ft_strclr.o ft_striter.o
 CC		:= gcc
 
 CFLAGS	:= -Werror -Wextra -Wall

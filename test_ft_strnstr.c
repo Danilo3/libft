@@ -1,30 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   test_ft_strnstr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 03:48:57 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 04:40:10 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/14 04:25:43 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/14 04:29:02 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include "minunit.h"
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
+static char *test_simple()
 {
-	size_t i;
+	const char	*haystack;
+	const char	*needle;
+	size_t n;
 
-	i = 0;
-	if (needle[0] == '\0')
-		return (char*)(haystack);
-	while (haystack[i])
-	{
-		if (ft_strnstartswith(haystack + i, needle, n))
-			return (char *)(haystack + i);
-		i++;
-	}
-	return (FT_NULL);
+	haystack = "haystack_with_needle";
+	needle = "needle";
+	n = 10;
+	mu_assert_str("found != \"needle\"", ft_strnstr(haystack, needle, n), "needle");
+	return (0);
 }
 
+
+int main(void)
+{
+	test_all("FT_STRNSTR", 1, test_simple);
+	return (0);
+}

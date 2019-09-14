@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstartswith.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 03:48:57 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 04:40:10 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/14 04:40:18 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/14 04:40:18 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n)
+int ft_strnstartswith(const char *str, const char *begin, size_t n)
 {
 	size_t i;
 
 	i = 0;
-	if (needle[0] == '\0')
-		return (char*)(haystack);
-	while (haystack[i])
+	while (str[i] && i < n)
 	{
-		if (ft_strnstartswith(haystack + i, needle, n))
-			return (char *)(haystack + i);
+		if (str[i] != begin[i])
+			return (0);
 		i++;
 	}
-	return (FT_NULL);
+	return (1);
 }
-

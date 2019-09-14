@@ -6,7 +6,7 @@
 /*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:46:58 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 03:42:39 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/14 04:58:26 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,11 @@ char 	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 void	ft_putchar_fd(char c, int fd);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
+char 	*ft_strnew(size_t size);
+void	ft_strdel(char **as);
+void	ft_strclr(char *s);
+void	ft_striter(char *s, void (*f)(char *));
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 
 /*
  **	Bonus
@@ -84,7 +89,8 @@ char	*ft_strrev(char *str);
 int		ft_isspace(char ch);
 int		ft_islower(int c);
 int		ft_isupper(int c);
-
+int 	ft_strstartswtih(const char *str, const char *begin);
+int		ft_strnstartswith(const char *str, const char *begin, size_t n);
 /*
  * Expansion
  */
