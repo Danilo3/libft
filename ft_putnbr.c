@@ -1,26 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_realloc.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/12 23:01:26 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/12 23:20:25 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/14 21:59:37 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/14 21:59:37 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-void	*ft_realloc(void *ptr, size_t size)
+void	ft_putnbr(int c)
 {
-	if (!ptr)
-		return (malloc(size));
-	else if (size == 0)
-	{
-		free(ptr);
-		return (malloc(sizeof(char)));
-	}
-
+	ft_putnbr_fd(c, 1);
 }

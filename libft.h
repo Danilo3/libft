@@ -6,7 +6,7 @@
 /*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:46:58 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 20:09:52 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/15 01:33:38 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,11 @@ int 	ft_isascii(int c);
 int		is_print(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-char	*ft_strcpy(char *dest, const char *str);
+char	*ft_strcpy(char *dst, const char *str);
 char 	*ft_strdup(const char *str);
-char	*ft_strncpy(char *det, const char *src, size_t len);
-char 	*ft_strcat(char *s1, char *s2);
-char	*ft_strncat(char *s1, char *s2, size_t n);
+char	*ft_strncpy(char *dst, const char *src, size_t len);
+char 	*ft_strcat(char *s1, const char *s2);
+char	*ft_strncat(char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *s1, const char *s2, size_t size);
 int		ft_strcmp(const char *s1, const char *s2);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
@@ -81,6 +81,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char 	*ft_strjoin(char const *s1, char const *s2);
 char 	*ft_itoa(int n);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putnbr(int n);
 
 /*
  **	Bonus
@@ -115,7 +116,6 @@ size_t	ft_lstlen(t_list *lst);
  * Expansion
  */
 void	ft_itostr(int value, char *str);
-void	ft_realloc(void *ptr, size_t size);
 void	ft_memjoin(void *s1, void *s2, size_t n1, size_t n2);
 void	*ft_memrcpy(void *dst, const void *src, size_t len);
 double	ft_power(double base, int n);

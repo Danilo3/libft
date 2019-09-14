@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 22:09:09 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/13 22:19:36 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/15 01:58:30 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ int ft_atoi(const char *str)
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i] == '-')
-		{
 			sign = -1;
-		}
 		i++;
 	}
 	while(ft_isdigit(str[i]))

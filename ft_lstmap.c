@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 20:49:05 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 20:52:21 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/15 01:30:20 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,24 @@
 /*
  ** allocates space for list of len elements
  */
-static t_list	*ft_lstalloc(size_t len)
-{
-	t_list *pl;
-	t_list *begin;
-	size_t i;
-
-	i = 1;
-	begin = ft_lstnew(NULL, 0);
-	if (!begin)
-		return (NULL);
-	pl = begin;
-	while (i < len)
-	{
-		pl = ft_lstnew(NULL, 0);
-		i++;
-	}
-	return (begin);
-}
+//static t_list	*ft_lstalloc(size_t len)
+//{
+//	t_list *pl;
+//	t_list *begin;
+//	size_t i;
+//
+//	i = 1;
+//	begin = ft_lstnew(NULL, 0);
+//	if (!begin)
+//		return (NULL);
+//	pl = begin;
+//	while (i < len)
+//	{
+//		pl = ft_lstnew(NULL, 0);
+//		i++;
+//	}
+//	return (begin);
+//}
 
 static t_list	*ft_lstdup(t_list *src)
 {
@@ -61,7 +61,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	pl = NULL;
 	len = ft_lstlen(lst);
 	if (!lst)
-		return ;
+		return (NULL);
 	new = (t_list**)malloc(sizeof(t_list*) * len);
 	pl = lst;
 	while(pl)

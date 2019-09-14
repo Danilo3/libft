@@ -6,34 +6,23 @@
 #    By: ayellin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/11 14:52:30 by ayellin           #+#    #+#              #
-#    Updated: 2019/09/14 04:58:26 by ayellin          ###   ########.fr        #
+#    Updated: 2019/09/15 01:33:38 by ayellin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
-
-#TODO: one name for src file
-#TODO: .o .c extensions
 
 NAME	:= libft.a
 
 SO_NAME := libft.so
 
-SRC		:= ft_strlen.c ft_strrev.c ft_itostr.c ft_memcmp.c ft_memcpy.c ft_memset.c \
-		ft_putchar_fd.c ft_islower.c ft_isupper.c ft_isalpha.c ft_bzero.c ft_isascii.c \
-		ft_lstnew.c ft_atoi.c ft_toupper.c ft_tolower.c ft_isspace.c ft_isdigit.c \
-		ft_isprint.c ft_isalnum.c ft_memccpy.c ft_memmove.c ft_memrcpy.c ft_memchr.c \
-		ft_strdup.c ft_strcpy.c ft_strncpy.c ft_strcat.c ft_strncat.c ft_strlcat.c \
-		ft_strcmp.c ft_strncmp.c ft_memalloc.c ft_memdel.c ft_strchr.c ft_strrchr.c \
-		ft_strstr.c ft_strnstr.c ft_strnstartswith.c ft_strstartswith.c ft_strnew.c \
-		ft_strdel.c ft_strclr.c ft_striter.c
+SRC		:=ft_atoi.c ft_bzero.c ft_count_digits.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_ischar.c ft_isdigit.c ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_itoa.c ft_itostr.c \
+		  ft_lstadd.c ft_lstdelone.c ft_lstiter.c ft_lstlen.c ft_lstmap.c ft_lstnew.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memdel.c ft_memmove.c \
+          ft_memrcpy.c ft_memset.c ft_power.c ft_putchar.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c ft_strcat.c ft_strchr.c ft_strclr.c \
+          ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c \
+          ft_strnequ.c ft_strnew.c ft_strnlen.c ft_strnstartswith.c ft_strnstr.c ft_strrchr.c ft_strrev.c ft_strsplit.c ft_strstartswith.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c
 
-OBJ		:= ft_strlen.o ft_strrev.o ft_itostr.o ft_memcmp.o ft_memcpy.o ft_memset.o \
-		ft_putchar_fd.o ft_islower.o ft_isupper.o ft_isalpha.o ft_bzero.o ft_isascii.o \
-		ft_lstnew.o ft_atoi.o ft_toupper.o ft_tolower.o ft_isspace.o ft_isdigit.o \
-		ft_isprint.o ft_isalnum.o ft_memccpy.o ft_memmove.o ft_memrcpy.o ft_memchr.o\
-		ft_strdup.o ft_strcpy.o ft_strncpy.o ft_strcat.o ft_strncat.o ft_strlcat.o \
-		ft_strcmp.o ft_strncmp.o ft_memalloc.o ft_memdel.o ft_strchr.o ft_strrchr.o \
-		ft_strstr.o ft_strnstr.o ft_strnstartswith.o ft_strstartswith.o	ft_strnew.o \
-		ft_strdel.o ft_strclr.o ft_striter.o
+
+OBJ		:= ${SRC:.c=.o}
+
 CC		:= gcc
 
 CFLAGS	:= -Werror -Wextra -Wall
@@ -60,6 +49,8 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 	rm -f $(SO_NAME)
+
+re: fclean all
 
 test: $(NAME) $(TEST)
 	$(CC) $(CFLAGS) $(TEST) -o test  -L. -lft
