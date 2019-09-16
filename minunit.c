@@ -15,11 +15,8 @@ int tests_failed = 0;
 int tests_run = 0;
 
 char* make_full_msg(const char* msg, const char* fname, const char* sep) {
-    char* full_msg;
-    full_msg = malloc(strlen(msg)+ strlen(sep) +strlen(fname)); /* make space for the new string (should check the return value ...) */
-    strcpy(full_msg, msg); /* copy name into the new var */
-    strcat(full_msg, sep);
-    strcat(full_msg, fname); /* add the extension */
+    char* full_msg = (char*)malloc(BUF_SIZE);
+    sprintf(full_msg, "%s %s %s",  fname, sep, msg);
     return full_msg;
 }
 

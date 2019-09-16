@@ -14,8 +14,26 @@
 
 void ft_putnbr_fd(int n, int fd)
 {
-	char str[11];
+	int is_neg;
 
-	ft_itostr(n, str);
-	ft_putstr_fd(str, fd);
+	is_neg = 0;
+	if (n < 0)
+	{
+		if (n == FT_INT_MIN)
+		{
+			ft_putstr_fd(FT_INT_MIN_STR, fd);
+			return;
+		}
+		n = -n;
+		is_neg = 1;
+	}
+	if (n < 10)
+	{
+		ft_putchar_fd(n + '0', fd);
+		if (is_neg)
+			ft_putchar_fd('-', fd);
+		return;
+	}
+	ft_putnbr_fd(n / 10, fd);
+	ft_putnbr_fd(n % 10, fd);
 }

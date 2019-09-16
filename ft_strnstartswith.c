@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_strnstartswith(const char *str, const char *begin, size_t n)
+int	ft_strnstartswith(const char *str, const char *begin, size_t n)
 {
 	size_t i;
 

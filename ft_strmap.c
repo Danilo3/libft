@@ -6,7 +6,7 @@
 /*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 13:33:56 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 13:36:03 by dan              ###   ########.fr       */
+/*   Updated: 2019/09/16 10:57:27 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strmap(char const *s, char (*f)(char))
 	size_t  i;
 
 	i = 0;
+	if (!s || !f)
+		return (FT_NULL);
 	new = ft_strnew(ft_strlen(s));
 	if (!new)
 		return (NULL);

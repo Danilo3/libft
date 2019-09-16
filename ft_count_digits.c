@@ -15,9 +15,11 @@ int	ft_count_digits(int n)
 	int count;
 
 	count = 0;
+	if (n == 0)
+		return (1);
 	while (n)
 	{
-		count ++;
+		count++;
 		n /= 10;
 	}
 	return (count);

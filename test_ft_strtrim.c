@@ -1,18 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   test_ft_strtrim.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/13 22:34:57 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/13 22:36:47 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/16 11:04:10 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/16 11:10:23 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "minunit.h"
+#include <stdlib.h>
 
-int		ft_isalnum(int c)
+static char *test_simple()
 {
-	return (ft_isdigit(c) || ft_isalpha(c));
+	char const *s = " simple ";
+	char *fresh = ft_strtrim(s);
+
+	mu_assert_str("result != \"simple\"", fresh, "simple");
+	free(fresh);
+	return (0);
+}
+// TODO: add more tests!
+int main()
+{
+	test_all("FT_STRTRIM", 1, test_simple);
+	return (0);
 }

@@ -18,6 +18,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	size_t  i;
 
 	i = 0;
+	if (!s || !f)
+		return (FT_NULL);
 	new = ft_strnew(ft_strlen(s));
 	if (!new)
 		return (NULL);

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   test_ft_itoa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 14:10:53 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 14:12:31 by dan              ###   ########.fr       */
+/*   Created: 2019/09/16 12:53:54 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/16 12:53:54 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "minunit.h"
 
-char	*ft_strsub(char	const *s, unsigned int start, size_t len)
+static char	*test_zero_negative()
 {
-	char *new;
-	if (!s)
-		return (FT_NULL);
-	new = ft_strnew(len);
-	if (!new)
-		return (FT_NULL);
-	ft_strncpy(new, s + start, len);
-	return (new);
+	mu_assert_str("must be zero", ft_itoa(-0), "0");
+	return (0);
+}
+
+int main()
+{
+	test_all("FT_ITOA", 1, test_zero_negative);
 }

@@ -6,7 +6,7 @@
 /*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:46:58 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/15 01:33:38 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/16 11:10:23 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,16 @@
 #include <string.h>
 
 #define FT_INT_MIN (-2147483647 -1)
+#define FT_INT_MIN_STR "-2147483648"
 #define FT_INT_MAX (2147483647)
 #define FT_CHAR_MAX 128
 #define FT_NULL ((void*)0)
 
 #define MIN(x, y) ((x) < (y) ? (x) : (y))
 #define MAX(x, y) ((x) > (y) ? (x) : (y))
+
+#define FT_TRUE 1
+#define FT_FALSE 0
 
 typedef unsigned char t_uchar;
 
@@ -82,7 +86,8 @@ char 	*ft_strjoin(char const *s1, char const *s2);
 char 	*ft_itoa(int n);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putnbr(int n);
-
+char	*ft_strtrim(char const *s);
+char	**ft_strsplit(char const *s, char c);
 /*
  **	Bonus
  */
@@ -97,7 +102,7 @@ typedef struct	s_list
 t_list	*ft_lstnew(void const *content, size_t content_size);
 void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void	ft_lstadd(t_list **alst, t_list *new);
+void	ft_lstadd(t_list **alst, t_list *n);
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 

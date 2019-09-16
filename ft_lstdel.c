@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 14:10:53 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 14:12:31 by dan              ###   ########.fr       */
+/*   Created: 2019/09/14 20:10:08 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/14 20:10:08 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(char	const *s, unsigned int start, size_t len)
+void ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	char *new;
-	if (!s)
-		return (FT_NULL);
-	new = ft_strnew(len);
-	if (!new)
-		return (FT_NULL);
-	ft_strncpy(new, s + start, len);
-	return (new);
+	t_list *pl;
+	t_list *next;
+
+	pl = NULL;
+	if (!alst || !*alst)
+		return ;
+	pl = *alst;
+	while (pl)
+	{
+		next = pl->next;
+		ft_lstdelone(&pl, del);
+		pl = next;
+	}
+	*alst = NULL;
 }

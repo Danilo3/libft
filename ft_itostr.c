@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 16:51:32 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/12 14:14:05 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/16 13:01:07 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ void ft_itostr(int value, char *str)
 	i = 0;
 	is_neg = 0;
 	is_int_min = 0;
+	if (value == 0)
+	{
+		ft_strcpy(str, "0");
+		return;
+	}
 	if (value < 0)
 	{
 		is_neg = 1;

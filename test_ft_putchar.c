@@ -1,32 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.cpp                                      :+:      :+:    :+:   */
+/*   test_ft_putchar.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 20:10:08 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 20:10:08 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/16 14:03:06 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/16 14:03:34 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
-
-void ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+static char *test_simple()
 {
-	t_list *pl;
-	t_list *next;
 
-	pl = NULL;
-	if (!alst || !*alst)
-		return ;
-	pl = *alst;
-	while (pl)
-	{
-		next = pl->next;
-		ft_lstdelone(pl, del);
-		pl = next;
-	}
-	*alst = NULL;
+	return (0);
+}
+
+int main()
+{
+	return (0);
 }
