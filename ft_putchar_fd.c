@@ -26,7 +26,6 @@ void	ft_putchar_fd(char c, int fd)
 	{
 		c1 = mask | ((unsigned char)c >> 6u);
 		c2 = (FT_CHAR_MAX) | (((unsigned char)c << 2u) >> 2u);
-
 		write(fd, &c1, 1);
 		write(fd, &c2, 1);
 	}

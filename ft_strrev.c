@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static void ft_ch_swap(char *a, char *b)
+static void	ft_ch_swap(char *a, char *b)
 {
 	char tmp;
 
@@ -21,7 +21,7 @@ static void ft_ch_swap(char *a, char *b)
 	*b = tmp;
 }
 
-char *ft_strrev(char *str)
+char		*ft_strrev(char *str)
 {
 	size_t i;
 	size_t j;
@@ -38,4 +38,3 @@ char *ft_strrev(char *str)
 	}
 	return (str);
 }
-

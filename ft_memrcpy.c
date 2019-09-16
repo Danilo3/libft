@@ -21,6 +21,6 @@ void	*ft_memrcpy(void *dest, const void *src, size_t len)
 	ps = (t_uchar*)src;
 	while ((--len) != 0)
 		*(pd + len) = *(ps + len);
-	*(pd) =  *(ps);
+	*(pd) = *(ps);
 	return (dest);
 }

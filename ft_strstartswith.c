@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int ft_strstartswith(const char *str, const char *begin)
+int		ft_strstartswith(const char *str, const char *begin)
 {
 	size_t i;
 

@@ -101,3 +101,10 @@ ft_memccpy : ft_memcpy + ft_memchr,
 ft_memmove : ft_memcpy + ft_memrcpy,
 ft_memchr : ft_ischar etc. (и т.д.)
 
+
+retry:
+TODO: ft_memmove
+TODO: ft_atoi
+TODO: ft_itoa
+TODO: ft_strlcat
+TODO: ft_memrcpy

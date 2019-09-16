@@ -6,13 +6,12 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 00:36:09 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 01:15:07 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/16 15:57:45 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-// TODO: memrcpy
 void	*ft_memmove(void *dest, const void *src, size_t len)
 {
 	t_uchar *pd;

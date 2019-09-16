@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 20:49:05 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/16 13:48:34 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/16 15:51:26 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static t_list	*ft_lstdup(t_list *src)
 	return (new_lst);
 }
 
-t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
+t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
 	t_list *pl;
 	t_list **new_lst;
@@ -41,7 +41,7 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	len = ft_lstlen(lst);
 	new_lst = (t_list**)malloc(sizeof(t_list*) * len);
 	pl = lst;
-	while(pl)
+	while (pl)
 	{
 		new_lst[i] = ft_lstdup(f(pl));
 		if (i != 0)

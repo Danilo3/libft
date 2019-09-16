@@ -6,25 +6,25 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 22:16:31 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/16 12:34:47 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/16 16:22:45 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static size_t ft_count_words(char const *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
-	size_t count;
-	size_t i;
-	char prev;
+	size_t	count;
+	size_t	i;
+	char	prev;
 
 	i = 0;
 	count = 0;
 	prev = '\0';
 	while (s[i])
 	{
-		if (s[i] != c && ( prev == c || prev == '\0'))
+		if (s[i] != c && (prev == c || prev == '\0'))
 			count++;
 		prev = s[i];
 		i++;
@@ -32,11 +32,11 @@ static size_t ft_count_words(char const *s, char c)
 	return (count);
 }
 
-static void ft_fill_words_len(int* words_lengths, char const *s, char c)
+static void		ft_fill_words_len(int *words_lengths, char const *s, char c)
 {
 	size_t	i;
-	int	j;
-	char 	prev;
+	int		j;
+	char	prev;
 
 	prev = '\0';
 	i = 0;
@@ -53,14 +53,14 @@ static void ft_fill_words_len(int* words_lengths, char const *s, char c)
 				i++;
 			}
 			if (s[i] == '\0')
-				break;
+				break ;
 		}
 		prev = s[i];
 		i++;
 	}
 }
 
-static char **ft_alloc_words(const int* words_lengths, size_t size)
+static char		**ft_alloc_words(const int *words_lengths, size_t size)
 {
 	char		**words;
 	size_t		i;
@@ -79,7 +79,8 @@ static char **ft_alloc_words(const int* words_lengths, size_t size)
 	return (words);
 }
 
-static  void ft_split(char **words, int* words_lengths, char const *s, char c)
+static void		ft_split(char **words,
+						int *words_lengths, char const *s, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -101,7 +102,7 @@ static  void ft_split(char **words, int* words_lengths, char const *s, char c)
 	}
 }
 
-char 	**ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
 	char	**words;
 	size_t	words_count;

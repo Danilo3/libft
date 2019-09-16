@@ -6,7 +6,7 @@
 /*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 14:10:53 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 14:12:31 by dan              ###   ########.fr       */
+/*   Updated: 2019/09/16 16:24:15 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 char	*ft_strsub(char	const *s, unsigned int start, size_t len)
 {
 	char *new;
+
 	if (!s)
 		return (FT_NULL);
 	new = ft_strnew(len);

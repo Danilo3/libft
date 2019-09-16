@@ -6,7 +6,7 @@
 /*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 15:55:35 by dan               #+#    #+#             */
-/*   Updated: 2019/09/14 15:55:35 by dan              ###   ########.fr       */
+/*   Updated: 2019/09/16 16:03:18 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	if(!s)
-		return;
+	if (!s)
+		return ;
 	ft_putstr_fd(s, fd);
 	ft_putchar_fd('\n', fd);
 }

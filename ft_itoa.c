@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: dan <dan@student.42.fr>                    +#+  +:+       +#+        */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 15:39:47 by dan               #+#    #+#             */
-/*   Updated: 2019/09/16 12:51:54 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/16 15:52:09 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/16 15:52:09 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		size++;
 	number = ft_strnew(size);
-	if(!number)
+	if (!number)
 		return (FT_NULL);
 	ft_itostr(n, number);
 	return (number);
 }
-
