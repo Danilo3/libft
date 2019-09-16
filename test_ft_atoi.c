@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/13 22:14:21 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/13 22:27:47 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/16 19:16:29 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,37 @@ static char	*test_with_std_atoi()
 	return (0);
 }
 
+static char *test_from_checker_long_max()
+{
+	int num;
+	const char *str;
+
+	str = "99999999999999999999999999";
+	num = ft_atoi(str);
+	mu_assert_i("[ft] != [st]", num, atoi(str));
+	return (0);
+}
+
+static char *test_from_checker_long_min()
+{
+	int num;
+	const char *str;
+
+	str = "-99999999999999999999999999";
+	num = ft_atoi(str);
+	mu_assert_i("[ft] != [st]", num, atoi(str));
+	return (0);
+}
+
 int main(void)
 {
-	test_all("FT_ATOI", 4,
-			test_simple, test_negative_simple, test_int_min, test_int_max,
-			test_with_std_atoi);
+	test_all("FT_ATOI", 6,
+			test_simple,
+			test_negative_simple,
+			test_int_min,
+			test_int_max,
+			test_with_std_atoi,
+			test_from_checker_long_max,
+			test_from_checker_long_min);
 	return (0);
 }

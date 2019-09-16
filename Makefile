@@ -6,7 +6,7 @@
 #    By: ayellin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/11 14:52:30 by ayellin           #+#    #+#              #
-#    Updated: 2019/09/16 17:37:47 by ayellin          ###   ########.fr        #
+#    Updated: 2019/09/16 19:48:19 by ayellin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME	:= libft.a
 
 SO_NAME := libft.so
 
-SRC		:=ft_atoi.c ft_bzero.c ft_count_digits.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_ischar.c ft_isdigit.c ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_itoa.c ft_itostr.c \
+SRC		:= ft_atoi.c ft_bzero.c ft_count_digits.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft_ischar.c ft_isdigit.c ft_islower.c ft_isprint.c ft_isspace.c ft_isupper.c ft_itoa.c ft_itostr.c \
 		  ft_lstadd.c ft_lstdelone.c ft_lstdel.c ft_lstiter.c ft_lstlen.c ft_lstmap.c ft_lstnew.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memdel.c ft_memmove.c \
           ft_memrcpy.c ft_memset.c ft_power.c ft_putchar.c ft_putchar_fd.c ft_putendl_fd.c ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c ft_strcat.c ft_strchr.c ft_strclr.c \
           ft_strcmp.c ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c \
@@ -22,7 +22,7 @@ SRC		:=ft_atoi.c ft_bzero.c ft_count_digits.c ft_isalnum.c ft_isalpha.c ft_isasc
           ft_putendl.c
 
 
-OBJ		:= ${SRC:.c=.o}
+O_FILE		:= ${SRC.:c=.o}
 
 CC		:= gcc
 
@@ -30,15 +30,18 @@ CFLAGS	:= -Werror -Wextra -Wall
 
 TEST 	:= minunit.c test_ft_memcpy.c ft_memcpy.c
 
-CHECKER_DIR := /Users/ayellin/21/tasks/libft/tests/libft/
+CHECKER_DIR := /Users/ayellin/libft
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	ar -rc  $(NAME) $(OBJ)
+$(NAME): $(O_FILE)
+	@ar -rc  $(NAME) $(O_FILE)
 
-$(OBJ): $(SRC)
-	$(CC) $(CFLAGS) -c $(SRC)
+%.o : %.c
+	$(CC) $(CFLAGS) -o $@ -c
+
+#$(OBJ): $(SRC)
+#	$(CC) $(CFLAGS) -c $(SRC)
 
 so:  $(SRC)
 	$(CC) $(CFLAGS) -fPIC -c $(SRC)
