@@ -6,7 +6,7 @@
 #    By: ayellin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/11 14:52:30 by ayellin           #+#    #+#              #
-#    Updated: 2019/09/16 19:48:19 by ayellin          ###   ########.fr        #
+#    Updated: 2019/09/16 21:21:45 by ayellin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,9 @@ SRC		:= ft_atoi.c ft_bzero.c ft_count_digits.c ft_isalnum.c ft_isalpha.c ft_isas
           ft_putendl.c
 
 
-O_FILE		:= ${SRC.:c=.o}
+OBJ		= $(SRC:.c=.o)
+
+
 
 CC		:= gcc
 
@@ -34,14 +36,13 @@ CHECKER_DIR := /Users/ayellin/libft
 
 all: $(NAME)
 
-$(NAME): $(O_FILE)
-	@ar -rc  $(NAME) $(O_FILE)
+$(NAME): $(OBJ)
+	@ar -rc  $(NAME) $(OBJ)
 
-%.o : %.c
-	$(CC) $(CFLAGS) -o $@ -c
+%.o: %.c
+	$(CC) $< $(CFLAGS) -o $@ -c
 
-#$(OBJ): $(SRC)
-#	$(CC) $(CFLAGS) -c $(SRC)
+%.c : $(SRC)
 
 so:  $(SRC)
 	$(CC) $(CFLAGS) -fPIC -c $(SRC)
