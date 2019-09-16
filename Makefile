@@ -6,7 +6,7 @@
 #    By: ayellin <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/11 14:52:30 by ayellin           #+#    #+#              #
-#    Updated: 2019/09/15 01:33:38 by ayellin          ###   ########.fr        #
+#    Updated: 2019/09/16 17:37:47 by ayellin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ $(NAME): $(OBJ)
 	ar -rc  $(NAME) $(OBJ)
 
 $(OBJ): $(SRC)
-		$(CC) $(CFLAGS) -c $(SRC)
+	$(CC) $(CFLAGS) -c $(SRC)
 
 so:  $(SRC)
 	$(CC) $(CFLAGS) -fPIC -c $(SRC)

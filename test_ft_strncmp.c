@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/16 17:24:18 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/16 17:24:18 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/16 17:28:33 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static char *test_simple()
 	const char *s2 = "abcde";
 	size_t n = 3;
 
-	mu_assert_i("[st] != [ft]", ft_strncmp(s1, s2, n), )
+	mu_assert_i("[ft] != [st]", ft_strncmp(s1, s2, n), strncmp(s1, s2, n));
+	return (0);
 }
 
 int main()

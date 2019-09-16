@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 03:22:34 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/16 17:23:24 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/16 17:41:48 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 		s2++;
 		i++;
 	}
-	return ((t_uchar)(*s1) - (t_uchar)(*s2));
+	return (((t_uchar)(*s1)) - ((t_uchar)(*s2)));
 }
