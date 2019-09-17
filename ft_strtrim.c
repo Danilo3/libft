@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdlib.h>
 
-static char	ft_iswhitespace(char ch)
+static int	ft_iswhitespace(char ch)
 {
 	return (ch == '\t' || ch == '\n' || ch == ' ');
 }

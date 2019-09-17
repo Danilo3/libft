@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 04:25:43 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/16 10:39:36 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/17 15:37:07 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,26 @@ static char *test_simple_with_less_n()
 	return (0);
 }
 
+static char *test_from_system_cheker()
+{
+	const char *haystack;
+	const char *needle;
+	char *result;
+	size_t n;
+
+	n = 20;
+	haystack = "abababababc";
+	needle  = "abcd";
+	result = ft_strnstr(haystack, needle, n);
+	mu_assert_str_is_null("result must be null", result);
+	return (0);
+}
 
 int main(void)
 {
-	test_all("FT_STRNSTR", 2,
+	test_all("FT_STRNSTR", 3,
 			test_simple,
-			test_simple_with_less_n);
+			test_simple_with_less_n,
+			test_from_system_cheker);
 	return (0);
 }

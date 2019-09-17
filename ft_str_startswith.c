@@ -1,16 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ischar.c                                           :+:      :+:    :+:   */
+/*   ft_strstartswith.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/04 20:03:26 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/04 20:04:49 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/14 04:43:34 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/17 16:22:03 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_ischar(char c1, char c2)
+#include "libft.h"
+
+int		ft_str_startswith(const char *str, const char *start)
 {
-	return (c1 == c2);
+	size_t i;
+
+	i = 0;
+	while (str[i] && start[i])
+	{
+		if (str[i] != start[i])
+			return (FT_FALSE);
+		i++;
+	}
+	if (start[i])
+		return (FT_FALSE);
+	return (FT_TRUE);
 }

@@ -3,31 +3,50 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtouffet <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/06 08:53:02 by vtouffet          #+#    #+#             */
-/*   Updated: 2017/11/09 10:44:08 by vtouffet         ###   ########.fr       */
+/*   Created: 2019/09/17 16:13:14 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/17 16:13:14 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *str)
-{
-	int	res;
-	int	negative;
+#include "libft.h"
 
-	negative = 1;
-	res = 0;
-	while (*str && (*str == ' ' || *str == '\n' || *str == '\t' ||
-					*str == '\v' || *str == '\f' || *str == '\r'))
+#define FT_NEAR_LLONG_MAX (922337203685477580ul)
+
+static int	is_llong_max_overflow(unsigned long n, char c, int sign)
+{
+	return ((n > FT_NEAR_LLONG_MAX || \
+			(n == FT_NEAR_LLONG_MAX && c > 7)) && sign == 1);
+}
+
+static int	is_llong_min_overflow(unsigned long n, char c, int sign)
+{
+	return ((n > FT_NEAR_LLONG_MAX || \
+			(n == FT_NEAR_LLONG_MAX && c > 8)) && sign == -1);
+}
+
+int			ft_atoi(const char *str)
+{
+	unsigned long	res;
+	int				is_neg;
+
+	is_neg = 1;
+	res = 0ul;
+	while (*str && ft_isspace(*str))
 		++str;
 	if (*str == '-')
-		negative = -1;
+		is_neg = -1;
 	if (*str == '-' || *str == '+')
 		++str;
-	while (*str && *str >= '0' && *str <= '9')
+	while (*str && ft_isdigit(*str))
 	{
-		res = res * 10 + (*str - 48);
+		if (is_llong_max_overflow(res, (char)((*str) - '0'), is_neg))
+			return (-1);
+		else if (is_llong_min_overflow(res, (char)((*str) - '0'), is_neg))
+			return (0);
+		res = res * 10 + (*str - '0');
 		++str;
 	}
-	return (res * negative);
+	return ((int)(res * is_neg));
 }

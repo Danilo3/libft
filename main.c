@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstartswith.c                                :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 04:40:18 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 04:40:18 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/17 19:42:55 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/17 19:51:55 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strnstartswith(const char *str, const char *begin, size_t n)
+#define DEBUG
+#include <assert.h>
+int main()
 {
-	size_t i;
+	assert(1);
+	int a = ft_atoi("-11");
+	assert(a == -11);
+	int n = ft_count_digits(11);
+	assert(n == 2);
+	assert(ft_isalnum('a'));
+	assert(ft_isalpha('b'));
+	assert(ft_isascii(' '));
+	assert(ft_islower('z'));
+	assert(ft_isprint('n'));
+	assert(ft_isdigit('4'));
+	assert(ft_isspace('\t'));
 
-	i = 0;
-	while (str[i] && i < n)
-	{
-		if (str[i] != begin[i])
-			return (0);
-		i++;
-	}
-	return (1);
 }

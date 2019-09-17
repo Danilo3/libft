@@ -6,7 +6,7 @@
 /*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:46:58 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/16 17:02:16 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/17 19:09:25 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # define FT_INT_MAX (2147483647)
 # define FT_CHAR_MAX 128
 # define FT_NULL ((void*)0)
+# define FT_SIZE_T_MAX  (18446744073709551615u)
 
 # define MIN(x, y) ((x) < (y) ? (x) : (y))
 # define MAX(x, y) ((x) > (y) ? (x) : (y))
@@ -116,13 +117,12 @@ char			*ft_strrev(char *str);
 int				ft_isspace(char ch);
 int				ft_islower(int c);
 int				ft_isupper(int c);
-int				ft_strstartswtih(const char *str, const char *begin);
-int				ft_strnstartswith(const char *str, const char *begin, size_t n);
+int				ft_str_startswith(const char *str, const char *start);
 int				ft_count_digits(int n);
 size_t			ft_lstlen(t_list *lst);
 void			ft_itostr(int value, char *str);
-void			ft_memjoin(void *s1, void *s2, size_t n1, size_t n2);
 void			*ft_memrcpy(void *dst, const void *src, size_t len);
 double			ft_power(double base, int n);
+size_t 			ft_strnlen(const char *s, size_t max);
 
 #endif

@@ -24,6 +24,8 @@
 
 #define BUF_SIZE 1024
 
+#include <string.h>
+
 extern int tests_run;
 extern int tests_failed;
 
@@ -39,17 +41,23 @@ char* make_int_msg(char* message, int  i1, int i2, const char* fname);
 
 char* make_flt_msg(char* message, double f1, double f2, const char* fname);
 
+char *make_mem_msg(char *message, const void *m1, const void *m2, size_t size, const char *fname);
+
 char* make_ui_msg(char* message, unsigned f1, unsigned f2, const char* fname);
 
 #define mu_assert(message, test) do {if (!(test)) {return make_full_msg(message, __FUNCTION_NAME__, " -> ");} } while (0)
-#define mu_run_test(test) do { char* message = test(); tests_run++; \
-                          if (message) {tests_failed++; print_error(message); } } while(0)
+
+#define mu_run_test(test) do { char* message = test(); tests_run++; if (message) {tests_failed++; print_error(message); } } while(0)
 
 #define mu_assert_str(message, s1, s2) do {if (strcmp(s1, s2) != 0) {return make_str_msg(message, s1, s2, __FUNCTION_NAME__); } } while (0)
+
+#define mu_assert_mem(message, m1, m2, n) do {if (memcmp(m1, m2, n) != 0) {return make_mem_msg(message, m1, m2, n, __FUNCTION_NAME__); } } while (0)
 
 #define mu_assert_i(message, i1, i2) do {if (i1 != i2) { return make_int_msg(message, i1, i2, __FUNCTION_NAME__);} } while(0)
 
 #define mu_assert_f(message, f1, f2) do {if (f1 != f2) { return make_flt_msg(message, f1, f2, __FUNCTION_NAME__);} } while(0)
+
+#define mu_assert_str_is_null(message, s1) do {if (s1 != NULL) {return make_str_msg(message, s1, NULL, __FUNCTION_NAME__); } } while (0)
 
 #define mu_assert_ui(message, f1, f2) do {if (f1 != f2) { return make_ui_msg(message, f1, f2, __FUNCTION_NAME__);} } while(0)
 

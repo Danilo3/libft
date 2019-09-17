@@ -1,7 +1,7 @@
 /*
- * Mini unit testing framework based on
- * http://www.jera.com/techinfo/jtns/jtn002.html
- * and extended by @ayellin
+ ** Mini unit testing framework based on
+ ** http://www.jera.com/techinfo/jtns/jtn002.html
+ ** and extended by @ayellin
 */
 
 #include <string.h>
@@ -75,3 +75,15 @@ char* make_ui_msg(char* message, unsigned f1, unsigned f2, const char* fname) {
     return msg;
 }
 
+char *make_mem_msg(char *message, const void *m1, const void *m2, size_t n, const char *fname)
+{
+    char* msg = malloc(BUF_SIZE);
+    char s1[n + 1];
+    char s2[n + 1];
+    memcpy(s1, m1, n);
+    memcpy(s2, m2, n);
+    s1[n] = '\0';
+    s2[n] = '\0';
+    sprintf (msg, "%s -> %s: [%s] != [%s]", fname, message, s1, s2);
+    return msg;
+}

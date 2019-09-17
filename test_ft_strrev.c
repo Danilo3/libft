@@ -32,7 +32,7 @@ static char *test_empty(void)
 static char *test_one(void)
 {
 	char str[] = "a";
-	mu_assert_str("sigle 1", ft_strrev(str), "a");
+	mu_assert_str("single 1", ft_strrev(str), "a");
 	return (0);
 }
 

@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstartswith.c                                 :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/14 04:43:34 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/14 04:43:34 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/12 18:37:54 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/16 14:13:19 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include "libft.h"
 
-int		ft_strstartswith(const char *str, const char *begin)
+void	ft_putchar_utf8_fd(char c, int fd)
 {
-	size_t i;
+	unsigned char c1;
+	unsigned char c2;
+	unsigned char mask;
 
-	i = 0;
-	while (str[i])
+	mask = (unsigned char)192;
+	if (c >= 0)
+		write(fd, &c, 1);
+	else
 	{
-		if (str[i] != begin[i])
-			return (0);
-		i++;
+		c1 = mask | ((unsigned char)c >> 6u);
+		c2 = (FT_CHAR_MAX) | (((unsigned char)c << 2u) >> 2u);
+		write(fd, &c1, 1);
+		write(fd, &c2, 1);
 	}
-	return (1);
 }
