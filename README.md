@@ -23,6 +23,5 @@ Testing framework - minunit
 
 
 retry:
-ft_atoi
 ft_itoa
 ft_strlcat

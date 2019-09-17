@@ -1,10 +1,19 @@
-//
-// Created by dan on 13.09.19.
-//
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   test_ft_strmap.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/09/17 20:05:00 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/17 20:05:00 by ayellin          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "libft.h"
 #include <stdlib.h>
-
+/* possible realization
 char    *ft_strmap(char const *s, char (*f)(char))
 {
     char    *fresh;
@@ -21,3 +30,4 @@ char    *ft_strmap(char const *s, char (*f)(char))
     }
     return (fresh);
 }
+*/

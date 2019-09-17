@@ -1,4 +1,4 @@
-name 	        part 	    order	done    tested      uses
+name 	        part 	    order	done    tested      uses                problem
 
 ft_ischar       Expansion	1       +       +       logic
 ft_isdigit	    Part1	    1       +       +       logic
@@ -12,19 +12,19 @@ ft_memcpy	    Part1	    1       +       +       logic
 ft_memset	    Part1	    1       +       +       logic
 ft_putchar_fd	Part2       1       +       +       logic                 without unicode!
 ft_realloc	    Expansion	1       -       -       NOT DONE
-ft_striter	    Part2	    1       +       -       logic
-ft_strmap	    Part2	    1       +       -       ft_strnew
+ft_striter	    Part2	    1       +       +       logic
+ft_strmap	    Part2	    1       +       +       ft_strnew
 ft_strnlen	    Expansion	1	    +		+       logic
-ft_bzero	    Part1		2       +       +
-ft_atoi	        Part1	    2       +       +
-ft_isalpha	    Part1		2       +       +
-ft_lstnew	    Bonus		2       +       +
-ft_memchr	    Part1		2       +       -
-ft_memrcpy	    Expansion	2       +       -
-ft_putchar	    Part2		2       +       -
-ft_putstr_fd	Part2	    2       +       -
-ft_striteri	    Part2		2       +       -
-ft_strlen	    Part1		2       +       +
+ft_bzero	    Part1		2       +       +       logic
+ft_atoi	        Part1	    2       +       +       logic               right overflow processing?
+ft_isalpha	    Part1		2       +       +       logic
+ft_lstnew	    Bonus		2       +       +       ft_memcpy, malloc
+ft_memchr	    Part1		2       +       +       logic
+ft_memrcpy	    Expansion	2       +       +       logic
+ft_putchar	    Part2		2       +       +       ft_putchar_fd
+ft_putstr_fd	Part2	    2       +       +       ft_putchar_fd
+ft_striteri	    Part2		2       +       -       logic
+ft_strlen	    Part1		2       +       +       logic
 ft_strmapi	    Part2		2       +       -
 ft_strncmp	    Part1		2       +       -
 ft_tolower	    Part1		2       +       -
