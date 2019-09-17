@@ -6,21 +6,14 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 16:14:02 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/17 16:14:02 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/17 20:42:27 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-double	ft_power(double base, int n)
+int	ft_power(int base, unsigned int pow)
 {
-	double temp;
-
-	if (n == 0)
+	if (pow == 0)
 		return (1);
-	temp = ft_power(base, n / 2);
-	if ((n % 2) == 0)
-		return (temp * temp);
-	else if (n > 0)
-		return (n * temp * temp);
 	else
-		return ((temp * temp) / base);
+		return (ft_power(base, pow - 1) * base);
 }

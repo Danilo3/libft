@@ -62,8 +62,6 @@ clean_test: fclean
 	rm -f test
 
 move: fclean $(NAME) libft.h
-
-	cp $(NAME) $(CHECKER_DIR)
 	cp $(SRC)  $(CHECKER_DIR)
 	cp libft.h $(CHECKER_DIR)
 	cp Makefile $(CHECKER_DIR)

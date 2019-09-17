@@ -12,8 +12,6 @@
 
 #include "libft.h"
 
-#define FT_NEAR_LLONG_MAX (922337203685477580ul)
-
 static int	is_llong_max_overflow(unsigned long n, char c, int sign)
 {
 	return ((n > FT_NEAR_LLONG_MAX || \

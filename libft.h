@@ -6,7 +6,7 @@
 /*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:46:58 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/17 19:09:25 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/17 21:17:28 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 # define FT_CHAR_MAX 128
 # define FT_NULL ((void*)0)
 # define FT_SIZE_T_MAX  (18446744073709551615u)
+# define FT_NEAR_LLONG_MAX (922337203685477580ul)
 
 # define MIN(x, y) ((x) < (y) ? (x) : (y))
 # define MAX(x, y) ((x) > (y) ? (x) : (y))
@@ -120,9 +121,9 @@ int				ft_isupper(int c);
 int				ft_str_startswith(const char *str, const char *start);
 int				ft_count_digits(int n);
 size_t			ft_lstlen(t_list *lst);
-void			ft_itostr(int value, char *str);
+void			ft_itostr(int value, char *s5tr);
 void			*ft_memrcpy(void *dst, const void *src, size_t len);
-double			ft_power(double base, int n);
-size_t 			ft_strnlen(const char *s, size_t max);
+int				ft_power(int base, int n);
+size_t			ft_strnlen(const char *s, size_t max);
 
 #endif
