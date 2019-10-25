@@ -10,6 +10,9 @@ Checked with:
 Not realized:
     Unicode support in ft_putchar
 
+Maybe wrong funcs:
+- ft_lstmap
+
 Additional functions:
 1) ft_memrcpy
 2) ft_itostr
@@ -18,10 +21,6 @@ Additional functions:
 5) ft_power
 6) ft_str_startswith
 7) ft_strrev
+8) ...
 
 Testing framework - minunit
-
-
-retry:
-ft_itoa
-ft_strlcat

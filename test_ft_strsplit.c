@@ -14,6 +14,8 @@
 #include "minunit.h"
 #include <stdlib.h>
 
+//TODO: check possible memory leak
+
 void free_arr(char **arr, size_t size)
 {
 	size_t i = 0;

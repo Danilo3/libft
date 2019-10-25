@@ -1,35 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_str_shift_left.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/17 16:14:48 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/20 14:04:43 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/23 15:38:08 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/23 15:41:27 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_str_shift_left(char *str, size_t from)
 {
-	char	*new;
-	size_t	s1_len;
-	size_t	s2_len;
-	size_t	len;
+	size_t new_size;
 
-	if (!s1 || !s2)
-		return (FT_NULL);
-	s1_len = ft_strlen(s1);
-	s2_len = ft_strlen(s2);
-	len = s2_len + s1_len;
-	if (len < s1_len || len < s2_len)
-		return (NULL);
-	new = ft_strnew(len + 1);
-	if (!new)
-		return (FT_NULL);
-	ft_strncpy(new, s1, s1_len);
-	ft_strncat(new, s2, s2_len);
-	return (new);
+	new_size = ft_strlen(str + from);
+	ft_memmove(str, str + from, new_size);
+	str[new_size] = '\0';
 }

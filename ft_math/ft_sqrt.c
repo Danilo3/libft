@@ -1,26 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_mtrx.c                                     :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 13:54:13 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/20 13:57:27 by ayellin          ###   ########.fr       */
+/*   Created: 2019/10/08 14:51:38 by ayellin           #+#    #+#             */
+/*   Updated: 2019/10/11 16:57:07 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void	ft_free_mtx(char **ptr, size_t size)
+unsigned	ft_sqrt(unsigned x)
 {
-	size_t i;
+	unsigned m;
+	unsigned y;
+	unsigned b;
 
-	i = 0;
-	while (i < size)
+	m = 0x40000000;
+	y = 0;
+	while (m != 0)
 	{
-		free(ptr[i]);
-		i++;
+		b = y | m;
+		y >>= 1;
+		if (x >= b)
+		{
+			x -= b;
+			y |= m;
+		}
+		m >>= 2;
 	}
-	free(ptr);
+	return (y);
 }

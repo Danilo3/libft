@@ -6,13 +6,16 @@
 /*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/11 13:46:58 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/17 21:17:28 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/10/25 14:43:10 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
+# ifdef __linux__
+#  include <sys/types.h>
+# endif
 # include <string.h>
 
 # define FT_INT_MIN (-2147483647 -1)
@@ -93,7 +96,7 @@ char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 
 /*
- **	Bonus
+ **	List:
 */
 
 typedef struct	s_list
@@ -109,9 +112,10 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *n);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+size_t			ft_lstlen(t_list *lst);
 
 /*
- ** My expansion
+ ** String:
 */
 
 char			*ft_strrev(char *str);
@@ -119,12 +123,50 @@ int				ft_isspace(char ch);
 int				ft_islower(int c);
 int				ft_isupper(int c);
 int				ft_str_startswith(const char *str, const char *start);
-int				ft_count_digits(int n);
-size_t			ft_lstlen(t_list *lst);
 void			ft_itostr(int value, char *str);
-void			*ft_memrcpy(void *dst, const void *src, size_t len);
-int				ft_power(int base, int n);
 size_t			ft_strnlen(const char *s, size_t max);
-void			ft_free_mtx(char **ptr, size_t size);
+ssize_t			ft_strchri(const char *s, char c);
+void			ft_str_shift_left(char *str, size_t from);
+char			*ft_strjoinf(char *s1, char *s2, int flag);
+char			*ft_strsubf(char **ps, size_t start, size_t len);
+
+/*
+ **	Memory:
+*/
+
+void			*ft_memrcpy(void *dst, const void *src, size_t len);
+
+/*
+ ** Math expansion:
+*/
+
+unsigned		ft_sqrt(unsigned x);
+int				ft_ispsqrt(unsigned x);
+int				ft_count_digits(int n);
+int				ft_power(int base, int n);
+
+/*
+ ** Matrix expansion:
+*/
+
+char			**ft_alloc_sqmt(size_t n);
+void			ft_print_sqmt(char **mt);
+void			ft_free_sqmt(char **mt);
+int				ft_free_mtrx(char **mtrx, size_t n);
+
+/*
+ ** get next line
+*/
+
+# define BUFF_SIZE  16
+
+int				get_next_line(const int fd, char **line);
+
+/*
+ ** Other
+*/
+
+void			ft_init_arr(char *arr, size_t size, int value);
+int				ft_int_arr_cmp(int *a1, int *a2, size_t size);
 
 #endif

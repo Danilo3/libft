@@ -6,21 +6,18 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/20 13:54:13 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/20 13:57:27 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/10/11 15:42:09 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 
-void	ft_free_mtx(char **ptr, size_t size)
+void	ft_free_sqmt(char **mt)
 {
 	size_t i;
 
 	i = 0;
-	while (i < size)
-	{
-		free(ptr[i]);
-		i++;
-	}
-	free(ptr);
+	while (mt[i])
+		free((mt[i++]));
+	free(mt);
 }

@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_mtrx.c                                     :+:      :+:    :+:   */
+/*   ft_init_arr.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 13:54:13 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/20 13:57:27 by ayellin          ###   ########.fr       */
+/*   Created: 2019/10/24 18:53:52 by ayellin           #+#    #+#             */
+/*   Updated: 2019/10/24 18:53:54 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_free_mtx(char **ptr, size_t size)
+void	ft_init_arr(char *arr, size_t size, int value)
 {
 	size_t i;
 
 	i = 0;
 	while (i < size)
-	{
-		free(ptr[i]);
-		i++;
-	}
-	free(ptr);
+		arr[i++] = value;
 }

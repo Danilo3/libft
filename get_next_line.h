@@ -1,26 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_mtrx.c                                     :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 13:54:13 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/20 13:57:27 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/20 14:41:40 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/28 20:04:53 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#ifndef GNL_GET_NEXT_LINE_H
+# define GNL_GET_NEXT_LINE_H
 
-void	ft_free_mtx(char **ptr, size_t size)
-{
-	size_t i;
+# include "libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <limits.h>
 
-	i = 0;
-	while (i < size)
-	{
-		free(ptr[i]);
-		i++;
-	}
-	free(ptr);
-}
+# define BUFF_SIZE  16
+
+int		get_next_line(const int fd, char **line);
+
+#endif

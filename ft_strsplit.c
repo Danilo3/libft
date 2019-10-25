@@ -6,7 +6,7 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/14 22:16:31 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/16 16:22:45 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/20 13:57:27 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,10 @@ static char		**ft_alloc_words(const int *words_lengths, size_t size)
 	{
 		words[i] = (char*)malloc(sizeof(char) * (words_lengths[i] + 1));
 		if (!words[i])
+		{
+			ft_free_mtx(words, i);
 			return (NULL);
+		}
 		i++;
 	}
 	return (words);
@@ -117,7 +120,10 @@ char			**ft_strsplit(char const *s, char c)
 	ft_fill_words_len(words_lengths, s, c);
 	words = ft_alloc_words(words_lengths, words_count);
 	if (!words)
+	{
+		free(words_lengths);
 		return (NULL);
+	}
 	ft_split(words, words_lengths, s, c);
 	free(words_lengths);
 	words[words_count] = NULL;

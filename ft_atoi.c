@@ -6,11 +6,15 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/17 16:13:14 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/17 16:13:14 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/09/20 13:43:44 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+/*
+ ** TODO: understand overflow ... and dot it shorter
+*/
 
 static int	is_llong_max_overflow(unsigned long n, char c, int sign)
 {

@@ -1,26 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_mtrx.c                                     :+:      :+:    :+:   */
+/*   ft_realloc.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 13:54:13 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/20 13:57:27 by ayellin          ###   ########.fr       */
+/*   Created: 2019/09/20 22:35:33 by ayellin           #+#    #+#             */
+/*   Updated: 2019/09/20 22:41:17 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+/*
+ **@brief  Very simple and ugly realization of realloc
+ */
 
-void	ft_free_mtx(char **ptr, size_t size)
+void	*ft_realloc(void *ptr, size_t old_size, size_t new_size)
 {
-	size_t i;
-
-	i = 0;
-	while (i < size)
-	{
-		free(ptr[i]);
-		i++;
-	}
-	free(ptr);
 }

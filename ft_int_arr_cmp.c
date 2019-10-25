@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_mtrx.c                                     :+:      :+:    :+:   */
+/*   ft_int_arr_cmp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: ayellin <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/20 13:54:13 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/20 13:57:27 by ayellin          ###   ########.fr       */
+/*   Created: 2019/10/24 19:03:05 by ayellin           #+#    #+#             */
+/*   Updated: 2019/10/25 14:40:26 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-void	ft_free_mtx(char **ptr, size_t size)
+int		ft_int_arr_cmp(int *a1, int *a2, size_t size)
 {
 	size_t i;
 
 	i = 0;
 	while (i < size)
 	{
-		free(ptr[i]);
+		if (a1[i] != a2[i])
+			return (0);
 		i++;
 	}
-	free(ptr);
+	return (1);
 }
