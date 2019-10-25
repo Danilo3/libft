@@ -6,14 +6,14 @@
 /*   By: ayellin <ayellin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/27 18:43:17 by ayellin           #+#    #+#             */
-/*   Updated: 2019/09/30 08:38:19 by ayellin          ###   ########.fr       */
+/*   Updated: 2019/10/25 15:34:27 by ayellin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdlib.h>
 #include <unistd.h>
 #include <limits.h>
+#include "get_next_line.h"
 
 int		get_from_buffer(char **buf, char **line, ssize_t size, ssize_t position)
 {
